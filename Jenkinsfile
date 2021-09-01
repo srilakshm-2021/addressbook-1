@@ -4,6 +4,7 @@ pipeline {
         stage('Compile') {
             steps { 
                 sh 'mvn compile'
+                emailext body: 'ABC', subject: 'Test email', to: 'developer@gmailcom'
             }
         }
         stage('test') {
